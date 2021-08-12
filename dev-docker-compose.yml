@@ -1,0 +1,24 @@
+version: "3"
+
+services:
+    web_charts_dev:
+        build: .
+        container_name: temp_chart_dev
+        network_mode: host
+        volumes:
+            - ./app:/app
+        environment:
+            TZ: "Europe/London"
+        command: tail -F anything  # keeps the container running
+        secrets:
+            - un
+            - pw
+            - host
+
+secrets:
+    un:
+        file: ./secrets/un
+    pw:
+        file: ./secrets/pw
+    host:
+        file: ./secrets/host
