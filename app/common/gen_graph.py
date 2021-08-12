@@ -12,7 +12,7 @@ from db import DBInterface
 class Graph:
     """Generates the chart"""
 
-    def __init__(self, records: int = 76) -> None:
+    def __init__(self, records: int = 504) -> None:
         """init for Chart"""
         self.records = records
 
