@@ -60,7 +60,7 @@ class Graph:
 
     def generate(self):
         """Generates the pygal line graph"""
-        chart = pygal.Line(interpolate='cubic', style=pygal.style.DarkColorizedStyle)
+        chart = pygal.Line(interpolate='cubic', style=pygal.style.DarkColorizedStyle, show_x_labels=False)
         chart.x_labels = self.plot_data["labels"]
         for sensor in SENSOR_NAMES:
             chart.add(sensor, self.plot_data["data"][sensor])
